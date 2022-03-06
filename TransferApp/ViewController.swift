@@ -13,10 +13,10 @@ protocol UpdatableDataController: AnyObject {
 
 class ViewController: UIViewController, UpdatableDataController, DataUpdateProtocol {
     
-
+    
     @IBOutlet var dataLabel: UILabel!
     
-    var updateData: String = ""
+    var updateData: String = "Hello!"
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -69,7 +69,7 @@ class ViewController: UIViewController, UpdatableDataController, DataUpdateProto
         guard let destinationVC = segue.destination as? SecondViewController else { return }
         destinationVC.updatingData = dataLabel.text ?? ""
     }
-
+    
     func onDataUpdate(data: String) {
         updateData = data
         updateLabel(withText: data)
