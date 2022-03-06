@@ -47,6 +47,30 @@
                                     <segue destination="FbH-O4-YQY" kind="show" identifier="toEditScreen" id="nSc-ru-QbN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdZ-VA-lWJ">
+                                <rect key="frame" x="49.5" y="632" width="315" height="38"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Изменить с помощю delegate">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editDataWithDelegate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="heI-xV-nJQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLZ-xw-0bv">
+                                <rect key="frame" x="56" y="700" width="302" height="38"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Изменить с помощю closure">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editDataWithClosure:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dky-ga-4Jr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -55,8 +79,12 @@
                             <constraint firstItem="8Qb-ic-kdK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6tV-CG-7iZ"/>
                             <constraint firstItem="7eo-vT-ozL" firstAttribute="top" secondItem="HEw-dT-uLr" secondAttribute="bottom" constant="30" id="ByP-JW-wyV"/>
                             <constraint firstItem="HEw-dT-uLr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HsC-VT-tw5"/>
+                            <constraint firstItem="TLZ-xw-0bv" firstAttribute="top" secondItem="LdZ-VA-lWJ" secondAttribute="bottom" constant="30" id="PAb-aY-zSk"/>
                             <constraint firstItem="8Qb-ic-kdK" firstAttribute="top" secondItem="7eo-vT-ozL" secondAttribute="bottom" constant="30" id="RIw-pU-45C"/>
                             <constraint firstItem="HEw-dT-uLr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T64-sY-Oa6"/>
+                            <constraint firstItem="LdZ-VA-lWJ" firstAttribute="top" secondItem="8Qb-ic-kdK" secondAttribute="bottom" constant="30" id="jzU-dH-VqW"/>
+                            <constraint firstItem="TLZ-xw-0bv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l99-lW-iAr"/>
+                            <constraint firstItem="LdZ-VA-lWJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rxc-fn-HLX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Сцена А" largeTitleDisplayMode="always" id="JUW-yD-iju"/>
@@ -93,14 +121,56 @@
                                     <action selector="saveDataWithProperty:" destination="FbH-O4-YQY" eventType="touchUpInside" id="wk3-FZ-KVl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iD5-8D-OlK">
+                                <rect key="frame" x="45.5" y="563" width="323" height="38"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Сохранить с помощью Unwind">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="I8z-aX-Th7" kind="unwind" identifier="toFirstScreen" unwindAction="unwind:" id="9ax-uW-fvr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juR-ni-pYu">
+                                <rect key="frame" x="40.5" y="631" width="333.5" height="38"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Сохранить с помощью delegate">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveDataWithDelegate:" destination="FbH-O4-YQY" eventType="touchUpInside" id="Sk9-qa-RHh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJ4-Gf-qjw">
+                                <rect key="frame" x="46.5" y="699" width="321" height="38"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Сохранить с помощью closure">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveDataWithClosure:" destination="FbH-O4-YQY" eventType="touchUpInside" id="nIN-4b-nfA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="80P-B1-tEV"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="PHn-qK-FkU" firstAttribute="centerY" secondItem="R4Y-FH-gsD" secondAttribute="centerY" id="2Mz-6b-GZW"/>
                             <constraint firstItem="mtu-zF-iZo" firstAttribute="centerX" secondItem="R4Y-FH-gsD" secondAttribute="centerX" id="3b2-41-Ob5"/>
+                            <constraint firstItem="mJ4-Gf-qjw" firstAttribute="centerX" secondItem="R4Y-FH-gsD" secondAttribute="centerX" id="KJh-yO-rL1"/>
+                            <constraint firstItem="iD5-8D-OlK" firstAttribute="centerX" secondItem="R4Y-FH-gsD" secondAttribute="centerX" id="LTh-XJ-Qr5"/>
+                            <constraint firstItem="iD5-8D-OlK" firstAttribute="top" secondItem="mtu-zF-iZo" secondAttribute="bottom" constant="30" id="PFf-5h-fky"/>
+                            <constraint firstItem="juR-ni-pYu" firstAttribute="centerX" secondItem="R4Y-FH-gsD" secondAttribute="centerX" id="RJv-WP-nLU"/>
                             <constraint firstItem="mtu-zF-iZo" firstAttribute="top" secondItem="PHn-qK-FkU" secondAttribute="bottom" constant="30" id="SON-Fs-upV"/>
+                            <constraint firstItem="mJ4-Gf-qjw" firstAttribute="top" secondItem="juR-ni-pYu" secondAttribute="bottom" constant="30" id="WEN-nS-TQq"/>
                             <constraint firstItem="80P-B1-tEV" firstAttribute="trailing" secondItem="PHn-qK-FkU" secondAttribute="trailing" constant="30" id="gR7-rj-RyE"/>
+                            <constraint firstItem="juR-ni-pYu" firstAttribute="top" secondItem="iD5-8D-OlK" secondAttribute="bottom" constant="30" id="hPj-Jv-zCb"/>
                             <constraint firstItem="PHn-qK-FkU" firstAttribute="leading" secondItem="80P-B1-tEV" secondAttribute="leading" constant="30" id="zxs-qk-RVI"/>
                         </constraints>
                     </view>
@@ -110,6 +180,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSH-K1-mkT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="I8z-aX-Th7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1894" y="146"/>
         </scene>
